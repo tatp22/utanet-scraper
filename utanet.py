@@ -59,6 +59,7 @@ def get_artist(content):
     soup = BeautifulSoup(content, "lxml")
     return soup.find("span", {"itemprop": "byArtist name"}).contents
 
-h = get_html(config["link"])
-pretty_print_kashi(get_kashi(h))
-print(get_artist(h))
+if __name__ == "__main__":
+    h = get_html(config["link"])
+    pretty_print_kashi(get_kashi(h))
+    print(get_artist(h))
